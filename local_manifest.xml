@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<!-- Remotes -->
+   		<remote name="gojo"
+			fetch="https://github.com/SatoruGojo2k23" />
+
+                <remote name="clang"
+			fetch="https://github.com/kdrag0n" />
+
+                <remote name="clamg"
+			fetch="https://gitlab.com/ImSurajxD" />
+
+    <!-- Device Trees -->
+    	 <project path="device/realme/RMX2020" name="device_realme_RMX2020" remote="gojo" revision="13.0-Proton-Clang" clone-depth="1" />
+         <project path="vendor/realme/RMX2020" name="ArrowOS-Devices/vendor_realme_RMX2020" remote="github" revision="arrow-13.1" clone-depth="1" />
+         <project path="kernel/realme/RMX2020" name="ArrowOS-Devices/android_kernel_realme_RMX2020" remote="github" revision="arrow-13.1" clone-depth="1" />
+
+	<!-- IMS -->
+		<project path="vendor/realme/RMX2020-ims" name="ArrowOS-Devices/vendor_realme_RMX2020-ims" remote="github" revision="arrow-13.1" clone-depth="1" />
+
+    <!-- MTK Hardware -->
+  	  <project path="hardware/mediatek" name="ArrowOS/android_hardware_mediatek" remote="github" revision="arrow-13.1" clone-depth="1" />
+
+	<!-- Sepolicy -->
+		<project path="device/mediatek/sepolicy_vndr" name="ArrowOS/android_device_mediatek_sepolicy_vndr" remote="github" revision="arrow-13.1" clone-depth="1" />
+
+
+	<!-- Clang -->
+		<project path="prebuilts/clang/host/linux-x86/proton-clang" name="proton-clang" remote="clang" revision="master" clone-depth="1" />
+        <project path="prebuilts/clang/host/linux-x86/clang-r450784d" name="clang-r450784d" remote="clamg" revision="master" clone-depth="1" />
+
+
+	<!-- Add 4G+ toggle -->
+		<remove-project name="crdroidandroid/android_packages_apps_Settings" />
+		<project path="packages/apps/Settings" name="CrDroid-android_packages_apps_Settings" remote="gojo" revision="13.0" clone-depth="1" />
+
+
+	<!-- Patches (IMS, BT) -->
+		<remove-project name="crdroidandroid/android_frameworks_base" />
+		<remove-project name="crdroidandroid/android_frameworks_av" />
+		<remove-project name="crdroidandroid/android_frameworks_native" />
+		<remove-project name="crdroidandroid/android_packages_modules_Wifi" />
+		
+		<project path="frameworks/base" name="CrDroid-android_frameworks_base" remote="gojo" revision="13.0" clone-depth="1" />
+		<project path="frameworks/av" name="CrDroid-android_frameworks_av" remote="gojo" revision="13.0" clone-depth="1" />
+		<project path="frameworks/native" name="CrDroid-android_frameworks_native" remote="gojo" revision="13.0" clone-depth="1" />
+		<project path="packages/modules/Wifi" name="CrDroid-android_packages_modules_Wifi" remote="gojo" revision="13.0" clone-depth="1" />
+
+</manifest>
